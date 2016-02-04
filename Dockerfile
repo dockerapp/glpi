@@ -45,3 +45,4 @@ RUN wget https://forge.glpi-project.org/attachments/download/2114/glpi-ocsinvent
 
 VOLUME /var/www/html
 
+EXPOSE 80
