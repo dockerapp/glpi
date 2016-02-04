@@ -42,6 +42,7 @@ RUN wget https://forge.glpi-project.org/attachments/download/2114/glpi-ocsinvent
         && git clone https://github.com/pluginsGLPI/simcard.git
 #        && git clone 
  
+RUN	echo -e '[PHP]\ndate.timezone = "Asia/Yekaterinburg"\nlog_errors = On\nerror_log = /proc/self/fd/1' >> /usr/local/etc/php/conf.d/log.ini
 
 VOLUME /var/www/html
 
