@@ -7,7 +7,7 @@ RUN apt-get update && apt-get install -y wget curl libjpeg-dev libpng12-dev libx
 RUN docker-php-ext-configure gd --with-png-dir=/usr --with-jpeg-dir=/usr \
 	&& docker-php-ext-install gd mysql mysqli xmlrpc curl mbstring
 RUN docker-php-ext-configure ldap --with-libdir=lib/x86_64-linux-gnu/ \
-	&& docker-php-ext-install ldap
+	&& docker-php-ext-install ldap soap
 WORKDIR "/var/www/html"
 RUN wget https://github.com/glpi-project/glpi/releases/download/0.90.1/glpi-0.90.1.tar.gz \
 	&& tar xvfz *.tar.gz && rm -f *.tar.gz \
