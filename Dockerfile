@@ -28,11 +28,19 @@ WORKDIR "/var/www/html/glpi/plugins"
 RUN apt-get install -y git
 RUN wget https://forge.glpi-project.org/attachments/download/2114/glpi-ocsinventoryng-1.2.1.tar.gz && tar xfvz *.tar.gz && rm -f *tar.gz \
 	&& wget https://forge.glpi-project.org/attachments/download/2101/glpi-reports-1.9.0.tar.gz && tar xvfz *.tar.gz && rm -f *.tar.gz \
+        && wget https://forge.glpi-project.org/attachments/download/2120/GLPI-dashboard_plugin-0.7.1.tar.gz && tar xfvz *.tar.gz && rm -f *tar.gz \
+        && wget https://forge.glpi-project.org/attachments/download/2081/glpi-datainjection-2.4.1.tar.gz && tar xfvz *.tar.gz && rm -f *tar.gz \
+        && wget https://forge.glpi-project.org/attachments/download/2099/glpi-webservices-1.6.0.tar.gz && tar xfvz *.tar.gz && rm -f *tar.gz \
+        && wget https://forge.glpi-project.org/attachments/download/2097/glpi-behaviors-0.90.tar.gz && tar xfvz *.tar.gz && rm -f *tar.gz \
 	&& git clone https://github.com/pluginsGLPI/fields.git && chown -R www-data /var/www/html/glpi/plugins/fields \
 	&& git clone https://github.com/InfotelGLPI/racks.git \
 	&& git clone https://github.com/pluginsGLPI/connections.git \
 	&& git clone https://github.com/pluginsGLPI/formcreator.git \
-	&& git clone https://github.com/pluginsGLPI/mreporting.git
+	&& git clone https://github.com/pluginsGLPI/mreporting.git \
+        && git clone https://github.com/TECLIB/genericobject.git \
+        && git clone https://github.com/InfotelGLPI/webapplications.git \
+        && git clone https://github.com/pluginsGLPI/simcard.git
+#        && git clone 
  
 
 VOLUME /var/www/html
